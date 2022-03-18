@@ -1,20 +1,24 @@
 
 
+
+
+
+
 function computerPlay() {
     let which = ['rock', 'paper', 'scissors']
     let hand = which[Math.floor(Math.random() * which.length)]
     return hand;
 }
 
-function singleRound() {
+function haveAGo(playerChoice) {
     
-    let playerChoice = prompt('Rock, paper or scissors?');
+    
     alert(`you chose ${playerChoice}`);
     let computerChoice = computerPlay();
     alert(`computer chooses ${computerChoice}`);
 
   if (playerChoice === 'rock' && computerChoice === 'scissors') {
-      alert('rock crushes scissors, you win!')
+      alert('rock smashe s the shit out of scissors, you win!')
   }
   else if (playerChoice === 'paper' && computerChoice === 'scissors') {
       alert('scissors cut paper, you lose!')
@@ -26,7 +30,7 @@ function singleRound() {
       alert('paper...erm....covers rock...computer wins, I guess');
   }
   else if (playerChoice === 'scissors' && computerChoice === 'rock') {
-      alert('rock smashes scissors, you lose!');
+      alert('rock smashes  the shit out of scissors, you lose!');
   }
   else if (playerChoice === 'paper' && computerChoice === 'rock') {
       alert('paper...erm...covers rock? You win, I guess');
@@ -36,10 +40,4 @@ function singleRound() {
   }
 }
 
-function game() {
-    for (i = 0; i < 5; i ++) {
-        singleRound();
-    }
-}
 
-game()

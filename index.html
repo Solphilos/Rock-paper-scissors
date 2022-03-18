@@ -1,14 +1,42 @@
 <!DOCTYPE html>
 <html>
     <head>
+        <title>Rock-Paper-Scissors</title>
         <meta charset="utf-8">
         <script src="script.js"></script>
     </head>
 
+<body>
+  <div class="main-container">
+   <div class="title"><h1>Lets play Rock, Paper, Scissors!</h1></div>
+   <div>
+     <button id="rocky">Rock</button>
+     <button id="papery">Paper</button>
+     <button id="scissory">Scissors</button>
 
 
+   </div>
+   <script>
+
+const rocky = document.querySelector('#rocky');
+rocky.addEventListener('click', () => { 
+    haveAGo('rock');
+});
+
+const papery = document.querySelector('#papery');
+papery.addEventListener('click', () => {
+    haveAGo('paper');
+});
 
 
+const scissory = document.querySelector('#scissory');
+scissory.addEventListener('click', () => {
+    haveAGo('scissors');
+});
 
+   </script>
+
+</div>
+</body>
 
 </html>

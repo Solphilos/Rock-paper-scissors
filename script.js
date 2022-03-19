@@ -11,33 +11,55 @@ function computerPlay() {
 }
 
 function haveAGo(playerChoice) {
-    
-    
-    alert(`you chose ${playerChoice}`);
+  
     let computerChoice = computerPlay();
-    alert(`computer chooses ${computerChoice}`);
+    document.getElementById('roc').style.display = 'none';
+    document.getElementById('pap').style.display = 'none';
+    document.getElementById('scis').style.display = 'none';
 
+
+    
+   
   if (playerChoice === 'rock' && computerChoice === 'scissors') {
-      alert('rock smashe s the shit out of scissors, you win!')
-  }
+       show('scissors');
+       document.getElementById('result2').innerHTML = 'Rock wins!';
+       
+   }
   else if (playerChoice === 'paper' && computerChoice === 'scissors') {
-      alert('scissors cut paper, you lose!')
+    show('scissors');
+    document.getElementById('result2').innerHTML = 'Scissors wins!';
+  
   }
   else if (playerChoice === 'scissors' && computerChoice === 'paper') {
-      alert('scissors cut paper, you win!') 
+    show('paper');
+    document.getElementById('result2').innerHTML = 'Scissors wins!';
   }
   else if (playerChoice === 'rock' && computerChoice === 'paper') {
-      alert('paper...erm....covers rock...computer wins, I guess');
+    show('paper');
+    document.getElementById('result2').innerHTML = 'Paper wins!';
+   
   }
   else if (playerChoice === 'scissors' && computerChoice === 'rock') {
-      alert('rock smashes  the shit out of scissors, you lose!');
+    show('rock');
+    document.getElementById('result2').innerHTML = 'rock wins!';
+     
   }
   else if (playerChoice === 'paper' && computerChoice === 'rock') {
-      alert('paper...erm...covers rock? You win, I guess');
+    show('rock');
+    document.getElementById('result2').innerHTML = 'Paper wins!';
   }
-  else {
-      alert('its a tie, play again');
+  else if (playerChoice === 'rock' && computerChoice === 'rock'){
+    show('rock');
+    document.getElementById('result2').innerHTML = 'It\'s a draw!';
   }
-}
+  else if (playerChoice === 'paper' && computerChoice === 'paper') {
+    show('paper');
+    document.getElementById('result2').innerHTML = 'It\'s a draw!';
+  }
 
+ else if (playerChoice === 'scissors' && computerChoice === 'scissors') {
+   show('scissors');
+   document.getElementById('result2').innerHTML = 'It\'s a draw!';
+}
+}
 

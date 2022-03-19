@@ -2,25 +2,38 @@
 <html>
     <head>
         <title>Rock-Paper-Scissors</title>
-        <meta charset="utf-8">
+        <meta charset="UTF-8">
         <script src="script.js"></script>
+        <link rel="stylesheet" href="style.css">
     </head>
 
 <body>
   <div class="main-container">
-   <div class="title"><h1>Lets play Rock, Paper, Scissors!</h1></div>
-   <div>
-     <button id="rocky">Rock</button>
-     <button id="papery">Paper</button>
-     <button id="scissory">Scissors</button>
+      <div class="title"><h1>Lets play Rock, Paper, Scissors!</h1></div>
+      <div class="buttons">
+          <input type="image" src="images/rock.png" id="rocky">
+           <input type="image" src="images/paper.png" id="papery">
+           <input type="image" src="images/scissors.png" id="scissory">
+ </div>
+
+ <div id="resultContainer">
+     <img src="images/rock.png" id="roc">
+     <img src="images/paper.png" id="pap">
+     <img src="images/scissors.png" id="scis">
+     </div> 
+<div id="result2">
+
+</div>
+    
 
 
-   </div>
+
    <script>
 
 const rocky = document.querySelector('#rocky');
 rocky.addEventListener('click', () => { 
     haveAGo('rock');
+// here try to add transform effect to the rock button. see video
 });
 
 const papery = document.querySelector('#papery');
@@ -34,9 +47,21 @@ scissory.addEventListener('click', () => {
     haveAGo('scissors');
 });
 
+function show(choice) {
+   
+   switch (choice) {
+     case 'rock': document.getElementById('roc').style.display = 'block';
+     break;
+     case 'paper': document.getElementById('pap').style.display = 'block';
+     break;
+     case 'scissors': document.getElementById('scis').style.display = 'block';
+     break;
+     
+} }
+
    </script>
 
 </div>
 </body>
 
-</html>
+</html> 

@@ -1,0 +1,57 @@
+.main-container {
+    height: 600px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    border: solid red;
+
+}
+
+.title {
+    border: solid red;
+    
+}
+
+.buttons {
+    border: solid red;
+    transition: all 1.07s;
+}
+
+#resultContainer {
+  border: solid red;
+  
+}
+
+#rocky, #papery, #scissory {
+    height: 150px;
+    width: auto;
+    
+    
+    
+}
+
+.clicked {
+    scale: 2;
+}
+
+#roc {
+    height: 150px;
+    width: auto;
+    display: none;
+    
+}
+
+#pap {
+    height: 150px;
+    width: auto;
+    display: none;
+    
+}
+
+#scis {
+    height: 150px;
+    width: auto;
+    display: none;
+    
+}

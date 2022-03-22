@@ -1,5 +1,31 @@
 
+let playerScore = 0;
+let computerScore = 0;
 
+
+function playAgain(winner) {
+    document.getElementById('invisible').classList.add('retry');
+    const box = document.getElementById('invisible');
+    box.removeAttribute('id');
+    box.textContent = `${winner} Play again?`
+    
+    
+}
+
+
+newGame = () => { document.location.reload(true) }
+
+
+
+
+function results() {
+  if (playerScore === 10 && computerScore < 10) {
+    playAgain('You win!');
+  }
+  else if (playerScore < 10 && computerScore === 10) {
+     playAgain('You lose!');
+      }
+    }
 
 
 
@@ -10,9 +36,12 @@ function computerPlay() {
     return hand;
 }
 
+
 function haveAGo(playerChoice) {
-  
-    let computerChoice = computerPlay();
+     
+
+    let computerChoice = computerPlay();     
+    results();
     document.getElementById('roc').style.display = 'none';
     document.getElementById('pap').style.display = 'none';
     document.getElementById('scis').style.display = 'none';
@@ -22,31 +51,37 @@ function haveAGo(playerChoice) {
    
   if (playerChoice === 'rock' && computerChoice === 'scissors') {
        show('scissors');
-       document.getElementById('result2').innerHTML = 'Rock wins!';
+       document.getElementById('result2').innerHTML = 'Rock beats scissors, you win!';
+       document.getElementById('playerscore').innerHTML = playerScore += 1;
+
+    
        
    }
   else if (playerChoice === 'paper' && computerChoice === 'scissors') {
     show('scissors');
-    document.getElementById('result2').innerHTML = 'Scissors wins!';
-  
+    document.getElementById('result2').innerHTML = 'Scissors cuts paper, you lose!';
+    document.getElementById('computerscore').innerHTML = computerScore += 1;
   }
   else if (playerChoice === 'scissors' && computerChoice === 'paper') {
     show('paper');
-    document.getElementById('result2').innerHTML = 'Scissors wins!';
+    document.getElementById('result2').innerHTML = 'Scissors cuts paper, you win!';
+    document.getElementById('playerscore').innerHTML = playerScore += 1;
   }
   else if (playerChoice === 'rock' && computerChoice === 'paper') {
     show('paper');
-    document.getElementById('result2').innerHTML = 'Paper wins!';
+    document.getElementById('result2').innerHTML = 'Paper covers rock, you lose!';
+    document.getElementById('computerscore').innerHTML = computerScore += 1;
    
   }
   else if (playerChoice === 'scissors' && computerChoice === 'rock') {
     show('rock');
-    document.getElementById('result2').innerHTML = 'rock wins!';
-     
+    document.getElementById('result2').innerHTML = 'Rock beats scissors, you lose!';
+    document.getElementById('computerscore').innerHTML = computerScore += 1;
   }
   else if (playerChoice === 'paper' && computerChoice === 'rock') {
     show('rock');
-    document.getElementById('result2').innerHTML = 'Paper wins!';
+    document.getElementById('result2').innerHTML = 'Paper covers rock, you win!';
+    document.getElementById('playerscore').innerHTML = playerScore += 1;
   }
   else if (playerChoice === 'rock' && computerChoice === 'rock'){
     show('rock');
@@ -61,5 +96,7 @@ function haveAGo(playerChoice) {
    show('scissors');
    document.getElementById('result2').innerHTML = 'It\'s a draw!';
 }
+
 }
+
 

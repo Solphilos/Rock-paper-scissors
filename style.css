@@ -1,8 +1,21 @@
 body {
     font-family: 'Roboto', 'Montserrat', sans-serif;
-   background-image: url('images/wood.jpg');
+    background-color: rgb(2, 15, 43);
+   margin: 0;
 }
 
+.header {
+    display: flex;
+    justify-content: center;
+    height: 90px;
+    width: 100%;
+}
+
+
+.title {
+   color: rgb(226, 141, 44)
+
+}
 
 .main-container {
     height: 700px;
@@ -10,8 +23,7 @@ body {
     flex-direction: column;
     justify-content: space-around;
     align-items: center;
-    border: solid red;
-   
+    
 
 }
 
@@ -26,7 +38,12 @@ body {
 
 .buttons:hover {
     background: transparent;
+    -webkit-transform: scale(1.2);
+    -ms-transform: scale(1.2);
+    transform: scale(1.2);
 }
+
+
 
 
 .buttons:active {
@@ -43,16 +60,18 @@ body {
 #result2 {
     font-size: 28px;
     font-family: 'Roboto', 'Montserrat', sans-serif;
+    color: white;
     
 }
 
 
 #player {
-   border: solid grey 6px;
+   border: solid rgb(226, 141, 44) 7px;
    border-style: outset;
    margin: 40px;
    border-radius: 15px;
-   background: rgb(138, 224, 98);
+   color: white;
+   background: none;
    padding: 10px;
    height: 130px;
    align-self: flex-end;
@@ -60,11 +79,12 @@ body {
 }
 
 #computer {
-   border: solid grey 6px;
+   border: solid rgb(226, 141, 44) 7px;
    margin: 40px;
    border-radius: 15px;
+   color: white;
    border-style: outset;
-   background: rgb(138, 224, 98);
+   background: none;
    padding: 10px;
    height: 130px;
    

@@ -13,9 +13,33 @@ function playAgain(winner) {
 }
 
 
+function clicked() {
+  document.getElementById('rocky').classList.add('clicked');
+  document.getElementById('papery').classList.add('clicked');
+  document.getElementById('scissory').classList.add('clicked');
+
+  
+  
+}
+
+removePlayerChoice = (chose) => {
+
+  if (chose === 'rock') {
+    document.getElementById('playerPap').style.display = 'none';
+   document.getElementById('playerScis').style.display = 'none'; }
+  else if (chose === 'paper') {
+    document.getElementById('playerRoc').style.display = 'none';
+    document.getElementById('playerScis').style.display = 'none';
+  }
+  else if (chose === 'scissors') {
+    document.getElementById('playerRoc').style.display = 'none';
+    document.getElementById('playerPap').style.display = 'none';
+  }
+}
+
+
+
 newGame = () => { document.location.reload(true) }
-
-
 
 
 function results() {

@@ -1,73 +1,127 @@
 body {
     font-family: 'Roboto', 'Montserrat', sans-serif;
-    background-color: rgb(171, 235, 213);
+   background-image: url('images/wood.jpg');
 }
 
 
 .main-container {
-    height: 600px;
+    height: 700px;
     display: flex;
     flex-direction: column;
     justify-content: space-around;
     align-items: center;
-    
+    border: solid red;
+   
 
 }
-
 
 
 .buttons {
-    height: 200px;
+    height: 100px;
     width: auto;
     margin: 40px;
-
+    transition: all 0.07s;
    
 }
 
+.buttons:hover {
+    background: transparent;
+}
+
+
+.buttons:active {
+      background: transparent;
+      transform: translateY(4px);
+    }
+
+
+.clicked {
+    transform: scale(1.1);
+    
+}
 
 #result2 {
     font-size: 28px;
     font-family: 'Roboto', 'Montserrat', sans-serif;
+    
 }
 
 
 #player {
-   border: solid grey;
+   border: solid grey 6px;
+   border-style: outset;
    margin: 40px;
    border-radius: 15px;
+   background: rgb(138, 224, 98);
+   padding: 10px;
+   height: 130px;
+   align-self: flex-end;
+   
 }
 
 #computer {
-   border: solid grey;
+   border: solid grey 6px;
    margin: 40px;
    border-radius: 15px;
+   border-style: outset;
+   background: rgb(138, 224, 98);
+   padding: 10px;
+   height: 130px;
+   
+
+   
 }
 
-
-
-
-#roc {
-    height: 150px;
+#playerRoc {
+    height: 110px;
     width: auto;
     display: none;
-    margin-top: 50px;
+   transition-delay: 2s;
+   
+    
+
+}
+ #playerScis {
+    height: 110px;
+    width: auto;
+    display: none;
+   transition-delay: 2s;
+   
+    
+ }
+
+ #playerPap {
+    height: 110px;
+    width: auto;
+    display: none;
+   transition-delay: 2s;
+   
+    
+ }
+
+#roc {
+    height: 110px;
+    width: auto;
+    display: none;
+   transition-delay: 2s;
    
     
 }
 
 #pap {
-    height: 150px;
+    height: 110px;
     width: auto;
     display: none;
-    margin-top: 50px;
     
+    transition-delay: 2s;
 }
 
 #scis {
-    height: 150px;
+    height: 110px;
     width: auto;
     display: none;
-    margin-top: 50px;
+    transition-delay: 2s;
+    
     
 }
 
@@ -77,9 +131,11 @@ body {
     height: 500px;
     width: 1200px;
     
-    
     justify-content: space-between;
+    
 }
+
+
 
 
 #invisible {
@@ -91,13 +147,24 @@ body {
 
 
 .retry {
-    background: rgb(182, 182, 182);
+    background: rgb(226, 141, 44);
     height: 100px;
     width: auto;
     display: block;
     border-radius: 10px;
+    border-width: 5px;
+    border-style: outset;
     box-shadow: rgb(32, 32, 32);
     font-size: 26px;
+}
+
+.retry:hover {
+
+}
+
+.retry:active {
+
+    transform: translateY(4px);
 }
 
 #retryButton {
@@ -105,13 +172,42 @@ body {
 }
 
 #playerscore {
-  
   text-align: center;
-  font-size: 30px bold;
+  font-size: 30px;
 }
 
 #computerscore {
-   
    text-align: center;
-   font-size: 30px bold;
+   font-size: 30px;
+}
+
+.computerContainer {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-content: center;
+ 
+}
+
+.playerContainer {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-content: center;
+    
+ 
+}
+
+
+#resultContainer {
+    height:fit-content;
+    width:fit-content;
+    
+    align-self: center;
+}
+
+#resultContainer2 {
+    height: fit-content;
+    width: fit-content;
+    align-self: center;
 }

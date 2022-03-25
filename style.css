@@ -1,8 +1,17 @@
-body {
-    font-family: 'Roboto', 'Montserrat', sans-serif;
-    background-color: rgb(2, 15, 43);
-   margin: 0;
+@font-face {
+    font-family: 'Orbitron-ExtraBold';
+    src: url('fonts/Orbitron-ExtraBold.ttf');
+      
 }
+
+
+
+body {
+    font-family: 'Orbitron-ExtraBold';
+    background-color: rgb(38, 36, 61);
+     margin: 0;
+}
+
 
 .header {
     display: flex;
@@ -13,8 +22,8 @@ body {
 
 
 .title {
-   color: rgb(226, 141, 44)
-
+   color: rgb(253, 148, 28);
+   
 }
 
 .main-container {
@@ -59,15 +68,17 @@ body {
 
 #result2 {
     font-size: 28px;
-    font-family: 'Roboto', 'Montserrat', sans-serif;
+    
     color: white;
+    align-self: center;
     
 }
 
 
 #player {
-   border: solid rgb(226, 141, 44) 7px;
+   border: solid blueviolet 7px;
    border-style: outset;
+   box-shadow: rgb(253, 148, 28) 0px 0px 13px 10px;
    margin: 40px;
    border-radius: 15px;
    color: white;
@@ -79,7 +90,9 @@ body {
 }
 
 #computer {
-   border: solid rgb(226, 141, 44) 7px;
+   border: solid blueviolet 7px;
+   box-shadow: rgb(253, 148, 28) 0px 0px 13px 10px;
+   border-style: outset;
    margin: 40px;
    border-radius: 15px;
    color: white;
@@ -89,8 +102,10 @@ body {
    height: 130px;
    
 
-   
 }
+   
+
+
 
 #playerRoc {
     height: 110px;
@@ -167,7 +182,8 @@ body {
 
 
 .retry {
-    background: rgb(226, 141, 44);
+    background: blueviolet;
+    color: white;
     height: 100px;
     width: auto;
     display: block;
@@ -176,10 +192,11 @@ body {
     border-style: outset;
     box-shadow: rgb(32, 32, 32);
     font-size: 26px;
+    font-family: 'Orbitron-ExtraBold'
 }
 
 .retry:hover {
-
+   background-color: rgb(253, 148, 28);
 }
 
 .retry:active {
@@ -192,11 +209,13 @@ body {
 }
 
 #playerscore {
+  
   text-align: center;
   font-size: 30px;
 }
 
 #computerscore {
+    
    text-align: center;
    font-size: 30px;
 }
@@ -231,3 +250,4 @@ body {
     width: fit-content;
     align-self: center;
 }
+

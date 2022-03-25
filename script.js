@@ -75,50 +75,52 @@ function haveAGo(playerChoice) {
    
   if (playerChoice === 'rock' && computerChoice === 'scissors') {
        show('scissors');
-       document.getElementById('result2').innerHTML = 'Rock beats scissors, you win!';
+       document.getElementById('result2').innerHTML = 'Score!';
        document.getElementById('playerscore').innerHTML = playerScore += 1;
+       
 
     
        
    }
   else if (playerChoice === 'paper' && computerChoice === 'scissors') {
     show('scissors');
-    document.getElementById('result2').innerHTML = 'Scissors cuts paper, you lose!';
+    document.getElementById('result2').innerHTML = 'Fail!';
     document.getElementById('computerscore').innerHTML = computerScore += 1;
+   
   }
   else if (playerChoice === 'scissors' && computerChoice === 'paper') {
     show('paper');
-    document.getElementById('result2').innerHTML = 'Scissors cuts paper, you win!';
+    document.getElementById('result2').innerHTML = 'Score!';
     document.getElementById('playerscore').innerHTML = playerScore += 1;
   }
   else if (playerChoice === 'rock' && computerChoice === 'paper') {
     show('paper');
-    document.getElementById('result2').innerHTML = 'Paper covers rock, you lose!';
+    document.getElementById('result2').innerHTML = 'Fail!';
     document.getElementById('computerscore').innerHTML = computerScore += 1;
    
   }
   else if (playerChoice === 'scissors' && computerChoice === 'rock') {
     show('rock');
-    document.getElementById('result2').innerHTML = 'Rock beats scissors, you lose!';
+    document.getElementById('result2').innerHTML = 'Fail!';
     document.getElementById('computerscore').innerHTML = computerScore += 1;
   }
   else if (playerChoice === 'paper' && computerChoice === 'rock') {
     show('rock');
-    document.getElementById('result2').innerHTML = 'Paper covers rock, you win!';
+    document.getElementById('result2').innerHTML = 'Score!';
     document.getElementById('playerscore').innerHTML = playerScore += 1;
   }
   else if (playerChoice === 'rock' && computerChoice === 'rock'){
     show('rock');
-    document.getElementById('result2').innerHTML = 'It\'s a draw!';
+    document.getElementById('result2').innerHTML = 'Draw';
   }
   else if (playerChoice === 'paper' && computerChoice === 'paper') {
     show('paper');
-    document.getElementById('result2').innerHTML = 'It\'s a draw!';
+    document.getElementById('result2').innerHTML = 'Draw';
   }
 
  else if (playerChoice === 'scissors' && computerChoice === 'scissors') {
    show('scissors');
-   document.getElementById('result2').innerHTML = 'It\'s a draw!';
+   document.getElementById('result2').innerHTML = 'Draw';
 }
 
 }

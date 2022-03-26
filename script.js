@@ -8,6 +8,7 @@ function playAgain(winner) {
     const box = document.getElementById('invisible');
     box.removeAttribute('id');
     box.textContent = `${winner} Play again?`
+    playSound('retry')
     
     
 }
@@ -45,9 +46,11 @@ newGame = () => { document.location.reload(true) }
 function results() {
   if (playerScore === 10 && computerScore < 10) {
     playAgain('You win!');
+    
   }
   else if (playerScore < 10 && computerScore === 10) {
      playAgain('You lose!');
+     
       }
     }
 
@@ -77,6 +80,7 @@ function haveAGo(playerChoice) {
        show('scissors');
        document.getElementById('result2').innerHTML = 'Score!';
        document.getElementById('playerscore').innerHTML = playerScore += 1;
+       playSound('playPoint');
        
 
     
@@ -86,41 +90,49 @@ function haveAGo(playerChoice) {
     show('scissors');
     document.getElementById('result2').innerHTML = 'Fail!';
     document.getElementById('computerscore').innerHTML = computerScore += 1;
+    playSound('compPoint');
    
   }
   else if (playerChoice === 'scissors' && computerChoice === 'paper') {
     show('paper');
     document.getElementById('result2').innerHTML = 'Score!';
     document.getElementById('playerscore').innerHTML = playerScore += 1;
+    playSound('playPoint')
   }
   else if (playerChoice === 'rock' && computerChoice === 'paper') {
     show('paper');
     document.getElementById('result2').innerHTML = 'Fail!';
     document.getElementById('computerscore').innerHTML = computerScore += 1;
+    playSound('compPoint');
    
   }
   else if (playerChoice === 'scissors' && computerChoice === 'rock') {
     show('rock');
     document.getElementById('result2').innerHTML = 'Fail!';
     document.getElementById('computerscore').innerHTML = computerScore += 1;
+    playSound('compPoint');
   }
   else if (playerChoice === 'paper' && computerChoice === 'rock') {
     show('rock');
     document.getElementById('result2').innerHTML = 'Score!';
     document.getElementById('playerscore').innerHTML = playerScore += 1;
+    playSound('playPoint')
   }
   else if (playerChoice === 'rock' && computerChoice === 'rock'){
     show('rock');
     document.getElementById('result2').innerHTML = 'Draw';
+    playSound('draw')
   }
   else if (playerChoice === 'paper' && computerChoice === 'paper') {
     show('paper');
     document.getElementById('result2').innerHTML = 'Draw';
+    playSound('draw')
   }
 
  else if (playerChoice === 'scissors' && computerChoice === 'scissors') {
    show('scissors');
    document.getElementById('result2').innerHTML = 'Draw';
+   playSound('draw')
 }
 
 }

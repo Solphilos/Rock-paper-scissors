@@ -5,7 +5,9 @@
    <meta charset="UTF-8">
    <script src="script.js" defer></script>
    <link rel="stylesheet" href="style.css"> <link rel="stylesheet" href="node_modules/animate.css/animate.min.css">
-   
+   <a href="sounds/buttonPress.mp3" class="buttonPress"></a>
+   <a href="sounds/computerScore.mp3" class="computerPoint"></a> 
+   <a href="sounds/playerScore.mp3" class="playerPoint"></a>  
 </head>
 <body>
     <div class="header">
@@ -52,6 +54,7 @@ const rocky = document.querySelector('#rocky');
 rocky.addEventListener('click', () => { 
     haveAGo('rock');
     clicked();
+   
     revealPlayerChoice('rock');
     removePlayerChoice('rock');
    
@@ -62,6 +65,7 @@ const papery = document.querySelector('#papery');
 papery.addEventListener('click', () => {
     haveAGo('paper');
     clicked();
+    
     revealPlayerChoice('paper');
     removePlayerChoice('paper');
     
@@ -72,6 +76,7 @@ const scissory = document.querySelector('#scissory');
 scissory.addEventListener('click', () => {
     haveAGo('scissors');
     clicked();
+    
     revealPlayerChoice('scissors');
     removePlayerChoice('scissors');
     
@@ -109,6 +114,34 @@ function show(choice) {
        document.getElementById('playerscore').classList.add('animate__animated animate__bounce');
        document.getElementById('computerscore').classList.add('animate__animated animate__bounce');
        
+    }
+
+    function playSound(sound) {
+      const playerPoint = new Audio('sounds/buttonPress.mp3');
+      const computerPoint = new Audio('sounds/computerScore.mp3');
+      const retry = new Audio('sounds/retry.mp3');
+      const clickedRetry = new Audio('sounds/clickedRetry.mp3');
+      const draw = new Audio('sounds/wrong.mp3')
+
+      if (sound === 'playPoint') {
+        playerPoint.play();
+      }
+      else if (sound === 'compPoint') {
+        computerPoint.play();
+      }
+
+      else if (sound === 'retry') {
+        retry.play();
+      }
+
+      else if (sound === 'draw') {
+        draw.play();
+
+      }
+
+      else if (sound === 'retryClicked') {
+        clickedRetry.play();
+      }
     }
   
 

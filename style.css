@@ -8,7 +8,7 @@
 
 body {
     font-family: 'Orbitron-ExtraBold';
-    background-color: #121114;
+    background-color: #1d1c20;
      margin: 0;
 }
 
@@ -104,6 +104,7 @@ body {
    margin: 40px;
    border-radius: 15px;
    color: white;
+   text-shadow: #64eeff 0px 0px 20px;
    background: rgb(94, 3, 86);
    padding: 10px;
    height: 130px;
@@ -118,6 +119,7 @@ body {
    margin: 40px;
    border-radius: 15px;
    color: white;
+   text-shadow: #64eeff 0px 0px 20px;
    border-style: outset;
    background: rgb(94, 3, 86);
    padding: 10px;

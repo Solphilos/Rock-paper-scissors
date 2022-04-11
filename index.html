@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
    <title>Rock-Paper-Scissors</title>
    <meta charset="UTF-8">
@@ -11,32 +11,38 @@
 </head>
 <body>
     <div class="header">
-    <div class="title"><h1> ROCK-PAPER-SCISSORS!</h1>
-    </div></div>
+      <div class="title"><h1> ROCK-PAPER-SCISSORS!</h1>
+      </div>
+    </div>
+
     <div class="main-container">
-        
-      <div id="scorebox">
-         <div class="playerContainer">
-      <div id="resultContainer2">
-        <img src="images/rock.png" id="playerRoc">
-        <img src="images/paper.png" id="playerPap">
-        <img src="images/scissors.png" id="playerScis">
-        </div> 
-           <div id="player"><h1>PLAYER SCORE:</h1><p id="playerscore">0</p></div>  </div>
+         <div id="scorebox">
+            <div class="playerContainer">
+                <div id="resultContainer2">
+                    <img src="images/rock.png" id="playerRoc">
+                    <img src="images/paper.png" id="playerPap">
+                    <img src="images/scissors.png" id="playerScis">
+                 </div> 
+           <div id="player"><h1>PLAYER SCORE:</h1><p id="playerscore">0</p></div>  
+            </div>
 
            <div id="result2"></div> 
 
-      <div class="computerContainer">
-       <div id="resultContainer">
-        <img src="images/rock.png" id="roc">
-        <img src="images/paper.png" id="pap">
-        <img src="images/scissors.png" id="scis">
-        </div> 
-         <div id="computer"><h1>COMPUTER SCORE:</h1><p id="computerscore">0</p>
-      </div> </div>
 
+
+            <div class="computerContainer">
+                <div id="resultContainer">
+                   <img src="images/rock.png" id="roc">
+                   <img src="images/paper.png" id="pap">
+                   <img src="images/scissors.png" id="scis">
+                </div> 
+             <div id="computer"><h1>COMPUTER SCORE:</h1><p id="computerscore">0</p>
+             </div> 
+         </div>
 
     </div>
+
+
     <div class="buttonContainer">
       <input type="image" src="images/rock.png" class="buttons" id="rocky">
       <input type="image" src="images/paper.png" class="buttons" id="papery">
@@ -48,104 +54,7 @@
     <div id="retryButton"><button id="invisible" class="animate__animated animate__backInLeft" onclick="newGame()">Try again?</button>
     </div>
 
-<script>
 
-const rocky = document.querySelector('#rocky');
-rocky.addEventListener('click', () => { 
-    haveAGo('rock');
-    clicked();
-   
-    revealPlayerChoice('rock');
-    removePlayerChoice('rock');
-   
-
-});
-
-const papery = document.querySelector('#papery');
-papery.addEventListener('click', () => {
-    haveAGo('paper');
-    clicked();
-    
-    revealPlayerChoice('paper');
-    removePlayerChoice('paper');
-    
-});
-
-
-const scissory = document.querySelector('#scissory');
-scissory.addEventListener('click', () => {
-    haveAGo('scissors');
-    clicked();
-    
-    revealPlayerChoice('scissors');
-    removePlayerChoice('scissors');
-    
-});
-
-function show(choice) {
-   
-   switch (choice) {
-     case 'rock': document.getElementById('roc').style.display = 'block';
-     break;
-     case 'paper': document.getElementById('pap').style.display = 'block';
-     break;
-     case 'scissors': document.getElementById('scis').style.display = 'block';
-     break;
-     
-}
-
-   
-  }
-
-  function revealPlayerChoice(choice) {
-    switch (choice) {
-     case 'rock': document.getElementById('playerRoc').style.display = 'block';
-     break;
-     case 'paper': document.getElementById('playerPap').style.display = 'block';
-     break;
-     case 'scissors': document.getElementById('playerScis').style.display = 'block';
-     break;
-     
-    }
-    
-  }
-
-  function animateWinner() {
-       document.getElementById('playerscore').classList.add('animate__animated animate__bounce');
-       document.getElementById('computerscore').classList.add('animate__animated animate__bounce');
-       
-    }
-
-    function playSound(sound) {
-      const playerPoint = new Audio('sounds/buttonPress.mp3');
-      const computerPoint = new Audio('sounds/computerScore.mp3');
-      const retry = new Audio('sounds/retry.mp3');
-      const clickedRetry = new Audio('sounds/clickedRetry.mp3');
-      const draw = new Audio('sounds/wrong.mp3')
-
-      if (sound === 'playPoint') {
-        playerPoint.play();
-      }
-      else if (sound === 'compPoint') {
-        computerPoint.play();
-      }
-
-      else if (sound === 'retry') {
-        retry.play();
-      }
-
-      else if (sound === 'draw') {
-        draw.play();
-
-      }
-
-      else if (sound === 'retryClicked') {
-        clickedRetry.play();
-      }
-    }
-  
-
-</script>
 
 </div>
 </body>

@@ -3,12 +3,110 @@ let playerScore = 0;
 let computerScore = 0;
 
 
+
+const rocky = document.querySelector('#rocky');
+rocky.addEventListener('click', () => { 
+    haveAGo('rock');
+    clicked();
+    revealPlayerChoice('rock');
+    deletePlayerChoice('rock');
+   
+
+});
+
+const papery = document.querySelector('#papery');
+papery.addEventListener('click', () => {
+    haveAGo('paper');
+    clicked();
+    
+    revealPlayerChoice('paper');
+    deletePlayerChoice('paper');
+    
+});
+
+
+const scissory = document.querySelector('#scissory');
+scissory.addEventListener('click', () => {
+    haveAGo('scissors');
+    clicked();
+    
+    revealPlayerChoice('scissors');
+    deletePlayerChoice('scissors');
+    
+});
+
+function show(choice) {
+   
+   switch (choice) {
+     case 'rock': document.getElementById('roc').style.display = 'block';
+     break;
+     case 'paper': document.getElementById('pap').style.display = 'block';
+     break;
+     case 'scissors': document.getElementById('scis').style.display = 'block';
+     break;
+     
+}
+
+   
+  }
+
+  function revealPlayerChoice(choice) {
+    switch (choice) {
+     case 'rock': document.getElementById('playerRoc').style.display = 'block';
+     break;
+     case 'paper': document.getElementById('playerPap').style.display = 'block';
+     break;
+     case 'scissors': document.getElementById('playerScis').style.display = 'block';
+     break;
+     
+    }
+    
+  }
+
+  function animateWinner() {
+       document.getElementById('playerscore').classList.add('animate__animated animate__bounce');
+       document.getElementById('computerscore').classList.add('animate__animated animate__bounce');
+       
+    }
+
+    function playSound(sound) {
+      const playerPoint = new Audio('sounds/buttonPress.mp3');
+      const computerPoint = new Audio('sounds/computerScore.mp3');
+      const retry = new Audio('sounds/retry.mp3');
+      const clickedRetry = new Audio('sounds/clickedRetry.mp3');
+      const draw = new Audio('sounds/wrong.mp3')
+
+      if (sound === 'playPoint') {
+        playerPoint.play();
+      }
+      else if (sound === 'compPoint') {
+        computerPoint.play();
+      }
+
+      else if (sound === 'retry') {
+        retry.play();
+      }
+
+      else if (sound === 'draw') {
+        draw.play();
+
+      }
+
+      else if (sound === 'retryClicked') {
+        clickedRetry.play();
+      }
+    }
+
+
+
+
+
 function playAgain(winner) {
     document.getElementById('invisible').classList.add('retry');
     const box = document.getElementById('invisible');
     box.removeAttribute('id');
-    box.textContent = `${winner} Play again?`
-    playSound('retry')
+    box.textContent = `${winner} Play again?`;
+    playSound('retry');
     
     
 }
@@ -23,7 +121,7 @@ function clicked() {
   
 }
 
-removePlayerChoice = (chose) => {
+deletePlayerChoice = (chose) => {
 
   if (chose === 'rock') {
     document.getElementById('playerPap').style.display = 'none';
